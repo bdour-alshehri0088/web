@@ -89,39 +89,55 @@ const Hero = () => {
                     The Second International Conference on Sand and Dust Storms
                 </h1>
 
+                {/* Unified Glass Container */}
                 <div style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                    backdropFilter: 'blur(20px)',
+                    borderRadius: '24px',
+                    padding: '2.5rem',
+                    marginBottom: '3rem',
+                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 20px 40px rgba(150, 114, 89, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '1rem 2rem',
-                    backgroundColor: 'rgba(150, 114, 89, 0.1)',
-                    borderRadius: '20px',
-                    marginBottom: '2.5rem',
-                    backdropFilter: 'blur(10px)'
+                    gap: '2rem',
+                    maxWidth: '800px',
+                    margin: '0 auto 3rem auto'
                 }}>
-                    <p style={{
-                        fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
-                        color: 'var(--color-primary)',
-                        fontWeight: '600',
-                        margin: 0,
-                        letterSpacing: '-0.02em'
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.5rem',
+                        alignItems: 'center'
                     }}>
-                        2 – 4 November 2026
-                    </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.8 }}>
-                        <MapPin size={18} color="var(--color-text)" />
-                        <span style={{
-                            fontSize: '1.1rem',
-                            color: 'var(--color-text)',
-                            fontWeight: '500'
+                        <p style={{
+                            fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
+                            color: 'var(--color-primary)',
+                            fontWeight: '700',
+                            margin: 0,
+                            letterSpacing: '-0.02em'
                         }}>
-                            Saudi Arabia
-                        </span>
+                            2 – 4 November 2026
+                        </p>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.8 }}>
+                            <MapPin size={18} color="var(--color-text)" />
+                            <span style={{
+                                fontSize: '1.1rem',
+                                color: 'var(--color-text)',
+                                fontWeight: '500'
+                            }}>
+                                Saudi Arabia
+                            </span>
+                        </div>
                     </div>
+
+                    <div style={{ width: '100%', height: '1px', backgroundColor: 'rgba(150, 114, 89, 0.15)' }} />
+
+                    <Countdown />
                 </div>
 
-                <Countdown />
+
 
                 <div>
                     <Link
