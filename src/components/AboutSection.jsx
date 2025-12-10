@@ -10,16 +10,34 @@ const AboutSection = () => {
                 <div style={{ marginBottom: '6rem' }}>
                     <div className="text-center" style={{ marginBottom: '3rem' }}>
                         <h2 style={{ fontSize: '2.5rem', color: 'var(--color-text)' }}>About the Conference</h2>
-                        <div style={{
-                            width: '60px',
-                            height: '4px',
-                            backgroundColor: 'var(--color-primary)',
-                            margin: '1rem auto 0',
-                            borderRadius: '2px'
-                        }} />
                     </div>
-                    <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', fontSize: '1.1rem', color: 'var(--color-text-light)' }}>
-                        <p>
+                    <div style={{
+                        maxWidth: '1000px',
+                        margin: '0 auto',
+                        backgroundColor: 'white',
+                        padding: '3.5rem',
+                        borderRadius: '24px',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                        border: '1px solid rgba(0,0,0,0.02)',
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }}>
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '4px',
+                            background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)'
+                        }} />
+
+                        <p style={{
+                            fontSize: '1.25rem',
+                            color: 'var(--color-text-light)',
+                            lineHeight: '1.8',
+                            textAlign: 'center',
+                            fontWeight: '400'
+                        }}>
                             The Second International Conference on Sand and Dust Storms (SDS) brings together global experts, researchers, and policymakers to address the growing challenges of dust storms. This event serves as a premier platform for exchanging knowledge, discussing innovative mitigation strategies, and fostering international cooperation to combat the environmental, health, and economic impacts of SDS.
                         </p>
                     </div>

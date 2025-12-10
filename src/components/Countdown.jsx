@@ -61,12 +61,7 @@ const Countdown = () => {
             display: 'flex',
             justifyContent: 'center',
             flexWrap: 'wrap',
-            marginBottom: '3rem',
-            padding: '1.5rem',
-            backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            backdropFilter: 'blur(5px)',
-            borderRadius: 'var(--border-radius)',
-            border: '1px solid rgba(150, 114, 89, 0.1)'
+            gap: '1rem'
         }}>
             {timerComponents.length ? timerComponents : <span>Time's up!</span>}
         </div>
