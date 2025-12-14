@@ -41,7 +41,7 @@ const Hero = () => {
                         <div className="hero-location">
                             <MapPin size={18} color="var(--color-text)" />
                             <span className="hero-location-text">
-                                Saudi Arabia
+                                Riyadh, Saudi Arabia
                             </span>
                         </div>
                     </div>
