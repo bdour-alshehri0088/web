@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Countdown.css';
 
 const Countdown = () => {
     const calculateTimeLeft = () => {
@@ -29,27 +30,11 @@ const Countdown = () => {
 
     Object.keys(timeLeft).forEach((interval) => {
         timerComponents.push(
-            <div key={interval} style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                margin: '0 1rem'
-            }}>
-                <span style={{
-                    fontSize: '2.5rem',
-                    fontWeight: '700',
-                    color: 'var(--color-primary)',
-                    lineHeight: 1
-                }}>
+            <div key={interval} className="countdown-item">
+                <span className="countdown-value">
                     {timeLeft[interval]}
                 </span>
-                <span style={{
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    color: 'var(--color-text-light)',
-                    letterSpacing: '0.1em',
-                    marginTop: '0.5rem'
-                }}>
+                <span className="countdown-label">
                     {interval}
                 </span>
             </div>
@@ -57,12 +42,7 @@ const Countdown = () => {
     });
 
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            gap: '1rem'
-        }}>
+        <div className="countdown-container">
             {timerComponents.length ? timerComponents : <span>Time's up!</span>}
         </div>
     );
