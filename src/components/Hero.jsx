@@ -118,7 +118,7 @@ const Hero = () => {
                             margin: 0,
                             letterSpacing: '-0.02em'
                         }}>
-                            2 – 4 November 2026
+                            2 – 3 November 2026
                         </p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.8 }}>
                             <MapPin size={18} color="var(--color-text)" />
