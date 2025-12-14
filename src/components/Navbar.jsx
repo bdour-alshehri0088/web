@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo_conference.png';
+import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,50 +21,23 @@ const Navbar = () => {
     };
 
     return (
-        <nav style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(10px)',
-            boxShadow: 'var(--shadow-sm)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 1000,
-            borderBottom: '1px solid rgba(0,0,0,0.05)'
-        }}>
-            <div className="container" style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                height: '90px'
-            }}>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <img src={logo} alt="Conference Logo" style={{ height: '75px' }} />
+        <nav className="navbar">
+            <div className="container navbar-container">
+                <Link to="/" className="navbar-logo-link">
+                    <img src={logo} alt="Conference Logo" className="navbar-logo" />
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'none', gap: '2.5rem' }}>
+                <div className="navbar-desktop-menu">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            style={{
-                                fontWeight: '500',
-                                fontSize: '1rem',
-                                color: isActive(link.path) ? 'var(--color-primary)' : 'var(--color-text)',
-                                position: 'relative',
-                                padding: '0.5rem 0'
-                            }}
+                            className={`navbar-link ${isActive(link.path) ? 'active' : ''}`}
                         >
                             {link.name}
                             {isActive(link.path) && (
-                                <span style={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    height: '2px',
-                                    backgroundColor: 'var(--color-primary)',
-                                    borderRadius: '2px'
-                                }} />
+                                <span className="navbar-link-indicator" />
                             )}
                         </Link>
                     ))}
@@ -71,9 +45,9 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="mobile-menu-btn"
+                    className="navbar-mobile-btn"
                     onClick={() => setIsOpen(!isOpen)}
-                    style={{ display: 'block', color: 'var(--color-text)' }}
+                    aria-label="Toggle menu"
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
@@ -81,45 +55,19 @@ const Navbar = () => {
 
             {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <div style={{
-                    position: 'absolute',
-                    top: '90px',
-                    left: 0,
-                    right: 0,
-                    backgroundColor: 'var(--color-white)',
-                    padding: '1.5rem',
-                    boxShadow: 'var(--shadow-lg)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1rem',
-                    borderTop: '1px solid rgba(0,0,0,0.05)'
-                }}>
+                <div className="navbar-mobile-menu">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
                             onClick={() => setIsOpen(false)}
-                            style={{
-                                fontWeight: '600',
-                                fontSize: '1.1rem',
-                                color: isActive(link.path) ? 'var(--color-primary)' : 'var(--color-text)',
-                                padding: '0.75rem 0',
-                                borderBottom: '1px solid rgba(0,0,0,0.05)'
-                            }}
+                            className={`navbar-mobile-link ${isActive(link.path) ? 'active' : ''}`}
                         >
                             {link.name}
                         </Link>
                     ))}
                 </div>
             )}
-
-            <style>{`
-        @media (min-width: 768px) {
-          .desktop-menu { display: flex !important; }
-          .mobile-menu-btn { display: none !important; }
-          .desktop-only { display: block !important; }
-        }
-      `}</style>
         </nav>
     );
 };
