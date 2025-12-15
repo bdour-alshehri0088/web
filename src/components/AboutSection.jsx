@@ -14,11 +14,12 @@ const AboutSection = () => {
                     <div style={{
                         maxWidth: '1000px',
                         margin: '0 auto',
-                        backgroundColor: 'white',
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Glassmorphism
+                        backdropFilter: 'blur(12px)',
                         padding: '3.5rem',
                         borderRadius: '24px',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
-                        border: '1px solid rgba(0,0,0,0.02)',
+                        boxShadow: 'var(--shadow-md)',
+                        border: '1px solid rgba(255, 255, 255, 0.5)',
                         position: 'relative',
                         overflow: 'hidden'
                     }}>
@@ -46,47 +47,61 @@ const AboutSection = () => {
                 {/* Why Attend? */}
                 <div style={{ marginBottom: '6rem' }}>
                     <h2 className="text-center" style={{ fontSize: '2.5rem', color: 'var(--color-text)', marginBottom: '3rem' }}>Why Attend?</h2>
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
                         {[
                             {
-                                icon: <Users size={32} color="white" />,
+                                icon: <Users size={28} color="white" />,
                                 title: 'Network with Experts',
                                 desc: 'Connect with leading scientists, meteorologists, and policymakers from around the globe.'
                             },
                             {
-                                icon: <Target size={32} color="white" />,
+                                icon: <Target size={28} color="white" />,
                                 title: 'Gain Insights',
                                 desc: 'Access the latest research, predictive models, and technological advancements in SDS monitoring.'
                             },
                             {
-                                icon: <FileText size={32} color="white" />,
+                                icon: <FileText size={28} color="white" />,
                                 title: 'Publish Your Work',
                                 desc: 'Present your research to an international audience and contribute to the global body of knowledge.'
                             }
                         ].map((item, index) => (
                             <div key={index} style={{
-                                backgroundColor: 'white',
-                                padding: '2rem',
-                                borderRadius: 'var(--border-radius)',
+                                backgroundColor: 'rgba(255, 255, 255, 0.8)', // Glassmorphism
+                                backdropFilter: 'blur(12px)',
+                                padding: '1.75rem 1.5rem', // Reduced padding
+                                borderRadius: '20px', // Consistent radius
                                 boxShadow: 'var(--shadow-sm)',
+                                border: '1px solid rgba(255, 255, 255, 0.5)',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 textAlign: 'center',
-                                gap: '1rem'
-                            }}>
+                                gap: '1rem',
+                                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                                cursor: 'default'
+                            }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-5px)';
+                                    e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                                }}
+                            >
                                 <div style={{
                                     backgroundColor: 'var(--color-primary)',
-                                    padding: '1rem',
+                                    padding: '0.875rem', // Slightly smaller icon container
                                     borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    marginBottom: '0.5rem'
                                 }}>
                                     {item.icon}
                                 </div>
-                                <h3 style={{ fontSize: '1.25rem' }}>{item.title}</h3>
-                                <p style={{ color: 'var(--color-text-light)' }}>{item.desc}</p>
+                                <h3 style={{ fontSize: '1.15rem' }}>{item.title}</h3>
+                                <p style={{ color: 'var(--color-text-light)', fontSize: '0.95rem', lineHeight: '1.5' }}>{item.desc}</p>
                             </div>
                         ))}
                     </div>
