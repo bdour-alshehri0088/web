@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Heart, Radio, Activity, Layers, Zap, Globe, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Import stream images
 import stream1Img from '../assets/streams/stream_1.png';
@@ -14,7 +14,6 @@ const streams = [
     {
         number: 1,
         title: 'Health, Societal and Economic Impacts',
-        icon: <Heart size={24} />,
         image: stream1Img,
         color: '#967259', // بني - للصحة والمجتمع
         topics: [
@@ -26,7 +25,6 @@ const streams = [
     {
         number: 2,
         title: 'Observation, Monitoring, and Remote Sensing',
-        icon: <Radio size={24} />,
         image: stream2Img,
         color: '#5B9BD5', // سماوي - للمراقبة والاستشعار
         topics: [
@@ -38,7 +36,6 @@ const streams = [
     {
         number: 3,
         title: 'Modelling, Forecasting and Early Warning',
-        icon: <Activity size={24} />,
         image: stream3Img,
         color: '#D4A03E', // أصفر غامق/ذهبي - للتنبؤ
         topics: [
@@ -50,7 +47,6 @@ const streams = [
     {
         number: 4,
         title: 'Sources, Processes and Mitigation',
-        icon: <Layers size={24} />,
         image: stream4Img,
         color: '#4A7C59', // أخضر - للزراعة وإعادة التأهيل
         topics: [
@@ -62,7 +58,6 @@ const streams = [
     {
         number: 5,
         title: 'Policy, Governance and International Cooperation',
-        icon: <Globe size={24} />,
         image: stream5Img,
         color: '#2C4A6E', // كحلي - للسياسات والحوكمة
         topics: [
@@ -74,7 +69,6 @@ const streams = [
     {
         number: 6,
         title: 'Aviation, Transportation, and Operational Safety',
-        icon: <Zap size={24} />,
         image: stream6Img,
         color: '#6B7B8C', // رمادي - للطيران والنقل
         topics: [
@@ -87,7 +81,6 @@ const streams = [
     {
         number: 7,
         title: 'Cross-Cutting and Emerging Topics',
-        icon: <Cpu size={24} />,
         image: stream7Img,
         color: '#8B6B61', // بني فاتح - للموضوعات الناشئة
         topics: [
@@ -293,34 +286,15 @@ const ThemeGrid = () => {
                             </div>
 
                             <div style={{ zIndex: 1 }}>
-                                <div style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.75rem',
-                                    marginBottom: '0.5rem'
+                                <span style={{
+                                    fontSize: '0.85rem',
+                                    color: 'rgba(255,255,255,0.9)',
+                                    fontWeight: '600',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.05em'
                                 }}>
-                                    <div style={{
-                                        width: '32px',
-                                        height: '32px',
-                                        borderRadius: '8px',
-                                        backgroundColor: 'rgba(255,255,255,0.2)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: 'white'
-                                    }}>
-                                        {currentStream.icon}
-                                    </div>
-                                    <span style={{
-                                        fontSize: '0.85rem',
-                                        color: 'rgba(255,255,255,0.9)',
-                                        fontWeight: '600',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.05em'
-                                    }}>
-                                        Stream {currentStream.number} of 7
-                                    </span>
-                                </div>
+                                    Stream {currentStream.number} of 7
+                                </span>
                                 <h3 style={{
                                     fontSize: '1.75rem',
                                     color: 'white',
