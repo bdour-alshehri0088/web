@@ -52,26 +52,61 @@ const PosterGuidelines = () => {
                         margin: '0 auto',
                         padding: '0 1rem'
                     }}>
-                        {/* Horizontal Line */}
+                        {/* Timeline Track Container */}
                         <div style={{
-                            position: 'absolute',
-                            left: '0',
-                            right: '0',
-                            top: '10px',
-                            height: '4px',
-                            background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%)',
-                            zIndex: 0,
-                            borderRadius: '2px'
-                        }} />
+                            position: 'relative',
+                            height: '20px', // Fixed height for the track
+                            marginBottom: '1rem'
+                        }}>
+                            {/* Horizontal Line */}
+                            <div style={{
+                                position: 'absolute',
+                                left: '0',
+                                right: '0',
+                                top: '50%',
+                                height: '4px',
+                                background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%)',
+                                transform: 'translateY(-50%)',
+                                zIndex: 0,
+                                borderRadius: '2px'
+                            }} />
 
-                        {/* Timeline Items */}
+                            {/* Timeline Items Grid (Circles only) */}
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(4, 1fr)',
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                zIndex: 1
+                            }}>
+                                {[0, 1, 2, 3].map((i) => (
+                                    <div key={i} style={{ position: 'relative', height: '100%' }}>
+                                        <div style={{
+                                            width: '14px',
+                                            height: '14px',
+                                            borderRadius: '50%',
+                                            backgroundColor: 'white',
+                                            border: '3px solid var(--color-primary)',
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            transform: 'translate(-50%, -50%)',
+                                            zIndex: 2,
+                                            boxShadow: '0 0 0 3px rgba(150, 114, 89, 0.1)'
+                                        }} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Labels Grid */}
                         <div style={{
                             display: 'grid',
                             gridTemplateColumns: 'repeat(4, 1fr)',
-                            gap: '2rem',
-                            position: 'relative',
-                            zIndex: 1,
-                            paddingTop: '2rem'
+                            gap: '2rem'
                         }}>
                             {[
                                 {
@@ -100,25 +135,9 @@ const PosterGuidelines = () => {
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        alignItems: 'center',
-                                        position: 'relative'
+                                        alignItems: 'center'
                                     }}
                                 >
-                                    {/* Circle on Timeline */}
-                                    <div style={{
-                                        width: '14px',
-                                        height: '14px',
-                                        borderRadius: '50%',
-                                        backgroundColor: 'white',
-                                        border: '3px solid var(--color-primary)',
-                                        position: 'absolute',
-                                        top: '-20px',
-                                        left: '50%',
-                                        transform: 'translateX(-50%)',
-                                        zIndex: 2,
-                                        boxShadow: '0 0 0 3px rgba(150, 114, 89, 0.1)'
-                                    }} />
-
                                     {/* Month and Day */}
                                     <div style={{
                                         textAlign: 'center',
