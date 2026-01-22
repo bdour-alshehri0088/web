@@ -240,10 +240,10 @@ const ThemeGrid = () => {
                         {/* Header with gradient and image */}
                         <div style={{
                             background: `linear-gradient(135deg, ${currentStream.color} 0%, ${currentStream.color}CC 100%)`,
-                            padding: '2rem',
+                            padding: '1.25rem 2rem',
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '2rem',
+                            gap: '1.5rem',
                             position: 'relative',
                             overflow: 'hidden'
                         }}>
@@ -264,12 +264,12 @@ const ThemeGrid = () => {
                             }} />
 
                             <div style={{
-                                width: '120px',
-                                height: '120px',
-                                borderRadius: '18px',
+                                width: '80px',
+                                height: '80px',
+                                borderRadius: '14px',
                                 backgroundColor: 'white',
-                                padding: '4px',
-                                boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
+                                padding: '3px',
+                                boxShadow: '0 6px 15px rgba(0,0,0,0.12)',
                                 flexShrink: 0,
                                 zIndex: 1
                             }}>
@@ -280,7 +280,7 @@ const ThemeGrid = () => {
                                         width: '100%',
                                         height: '100%',
                                         objectFit: 'cover',
-                                        borderRadius: '14px'
+                                        borderRadius: '11px'
                                     }}
                                 />
                             </div>
@@ -296,7 +296,7 @@ const ThemeGrid = () => {
                                     Stream {currentStream.number} of 7
                                 </span>
                                 <h3 style={{
-                                    fontSize: '1.75rem',
+                                    fontSize: '1.5rem',
                                     color: 'white',
                                     fontWeight: '700',
                                     margin: 0,
