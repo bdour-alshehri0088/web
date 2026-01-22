@@ -1,13 +1,13 @@
 .hero-section {
     position: relative;
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #F5F5F0 0%, #E0D8D0 100%);
     overflow: hidden;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .hero-bg-blob-1 {
@@ -61,31 +61,49 @@
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 4.5rem); /* Adjusted for mobile */
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
     color: var(--color-text);
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
     background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.hero-title-suffix {
+    font-size: 0.8em;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.hero-theme {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
 .hero-glass-card {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
+    border-radius: 18px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 20px 40px rgba(150, 114, 89, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(150, 114, 89, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
+    gap: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
 }
 
 .hero-date-location {
@@ -96,11 +114,11 @@
 }
 
 .hero-date {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: var(--color-primary);
     font-weight: 700;
     margin: 0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 .hero-location {
@@ -111,7 +129,7 @@
 }
 
 .hero-location-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--color-text);
     font-weight: 500;
 }
@@ -126,18 +144,22 @@
 @media (max-width: 768px) {
     .hero-section {
         padding: 1rem;
-        min-height: auto; /* Allow content to dictate height on mobile if needed */
-        padding-top: 6rem; /* Space for navbar */
+        min-height: auto;
+        /* Allow content to dictate height on mobile if needed */
+        padding-top: 6rem;
+        /* Space for navbar */
         padding-bottom: 4rem;
     }
 
     .hero-title {
-        font-size: 2rem; /* Force smaller size on mobile */
+        font-size: 2rem;
+        /* Force smaller size on mobile */
         margin-bottom: 1rem;
     }
 
     .hero-glass-card {
-        padding: 1.5rem; /* Reduce padding */
+        padding: 1.5rem;
+        /* Reduce padding */
         gap: 1.5rem;
         margin-bottom: 2rem;
     }

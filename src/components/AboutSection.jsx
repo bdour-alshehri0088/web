@@ -1,23 +1,23 @@
 import React from 'react';
-import { Target, Users, FileText, CheckCircle } from 'lucide-react';
+import { Target, Users, FileText, CheckCircle, BookOpen, Monitor, MessageSquare, Presentation } from 'lucide-react';
 
 const AboutSection = () => {
     return (
         <section className="section" style={{ backgroundColor: 'var(--color-surface)' }}>
             <div className="container">
 
-                {/* About The Conference */}
-                <div style={{ marginBottom: '6rem' }}>
-                    <div className="text-center" style={{ marginBottom: '3rem' }}>
-                        <h2 style={{ fontSize: '2.5rem', color: 'var(--color-text)' }}>About the Conference</h2>
+                {/* Conference Overview */}
+                <div style={{ marginBottom: '4rem' }}>
+                    <div className="text-center" style={{ marginBottom: '2rem' }}>
+                        <h2 style={{ fontSize: '2rem', color: 'var(--color-text)' }}>Conference Overview</h2>
                     </div>
                     <div style={{
-                        maxWidth: '1000px',
+                        maxWidth: '100%',
                         margin: '0 auto',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Glassmorphism
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
                         backdropFilter: 'blur(12px)',
-                        padding: '3.5rem',
-                        borderRadius: '24px',
+                        padding: '2.5rem',
+                        borderRadius: '20px',
                         boxShadow: 'var(--shadow-md)',
                         border: '1px solid rgba(255, 255, 255, 0.5)',
                         position: 'relative',
@@ -32,37 +32,57 @@ const AboutSection = () => {
                             background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)'
                         }} />
 
-                        <p style={{
-                            fontSize: '1.25rem',
+                        <div style={{
+                            fontSize: '1rem',
                             color: 'var(--color-text-light)',
-                            lineHeight: '1.8',
-                            textAlign: 'center',
-                            fontWeight: '400'
+                            lineHeight: '1.7',
+                            textAlign: 'left',
+                            fontWeight: '400',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1.25rem'
                         }}>
-                            The Second International Conference on Sand and Dust Storms (SDS) brings together global experts, researchers, and policymakers to address the growing challenges of dust storms. This event serves as a premier platform for exchanging knowledge, discussing innovative mitigation strategies, and fostering international cooperation to combat the environmental, health, and economic impacts of SDS.
-                        </p>
+                            <p>
+                                The Second International Conference on Sand and Dust Storms (SDS-2026) will convene the global community of researchers, operational experts, policymakers, and industry leaders to address the multifaceted challenges of sand and dust storms (SDS). Under the theme <strong>“Bridging Science and Solutions – Building Resilience to Sand and Dust Storms”</strong>, this pivotal forum is dedicated to translating cutting-edge research into actionable strategies, fostering innovation, and strengthening global partnerships.
+                            </p>
+                            <p>
+                                Hosted by the <strong>WMO Sand and Dust Storm Regional Center/ National Center for Meteorology of Saudi Arabia</strong>, the conference is a key event aligned with the <strong>United Nations Decade on Combating Sand and Dust Storms (2025–2034)</strong>. It will be held in Riyadh from <strong>3–5 November 2026</strong>.
+                            </p>
+
+                            <p>
+                                This conference offers a unique opportunity to network with global experts, discover innovative technologies, and contribute to building a more resilient future to the impacts of SDS on health, environment, climate, and sustainable development.
+                            </p>
+                            <p style={{ fontWeight: '600', color: 'var(--color-primary)' }}>
+                                We invite abstracts for oral and poster presentations as outlined below.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 {/* Why Attend? */}
-                <div style={{ marginBottom: '6rem' }}>
-                    <h2 className="text-center" style={{ fontSize: '2.5rem', color: 'var(--color-text)', marginBottom: '3rem' }}>Why Attend?</h2>
+                <div style={{ marginBottom: '2rem' }}>
+                    <h2 className="text-center" style={{ fontSize: '2rem', color: 'var(--color-text)', marginBottom: '2.5rem' }}>Why Attend?</h2>
                     <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
                         {[
                             {
-                                icon: <Users size={28} color="white" />,
-                                title: 'Network with Experts',
-                                desc: 'Connect with leading scientists, meteorologists, and policymakers from around the globe.'
+                                icon: <BookOpen size={28} color="white" />,
+                                title: 'Scientific Sessions',
+                                desc: 'Keynote lectures and oral presentations across seven core thematic streams.'
                             },
                             {
-                                icon: <Target size={28} color="white" />,
-                                title: 'Gain Insights',
-                                desc: 'Access the latest research, predictive models, and technological advancements in SDS monitoring.'
+                                icon: <Presentation size={28} color="white" />,
+                                title: 'Interactive Poster Sessions',
+                                desc: 'Dedicated sessions showcasing latest research with awards for students and early-career scientists.'
                             },
                             {
-                                icon: <FileText size={28} color="white" />,
-                                title: 'Publish Your Work',
-                                desc: 'Present your research to an international audience and contribute to the global body of knowledge.'
+                                icon: <Monitor size={28} color="white" />,
+                                title: 'Exhibition & Technology',
+                                desc: 'State-of-the-art scientific products, monitoring instruments, and technological solutions.'
+                            },
+                            {
+                                icon: <MessageSquare size={28} color="white" />,
+                                title: 'High-Level Panels',
+                                desc: 'Discussions focused on policy, governance, and international cooperation.'
                             }
                         ].map((item, index) => (
                             <div key={index} style={{

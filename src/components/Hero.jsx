@@ -30,13 +30,16 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <h1 className="hero-title">
-                    The Second International Conference on Sand and Dust Storms
+                    The Second International Conference on Sand and Dust Storms (SDS-2026)
                 </h1>
+                <p className="hero-theme">
+                    Bridging Science and Solutions – Building Resilience to Sand and Dust Storms
+                </p>
 
                 <div className="hero-glass-card">
                     <div className="hero-date-location">
                         <p className="hero-date">
-                            2 – 3 November 2026
+                            3–5 November 2026
                         </p>
                         <div className="hero-location">
                             <MapPin size={18} color="var(--color-text)" />

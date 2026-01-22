@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoCombined from '../assets/logo_combined.png';
 
 const Footer = () => {
@@ -104,10 +105,19 @@ const Footer = () => {
                             }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', minWidth: '160px' }}>
                                     <h3 style={{ color: 'var(--color-secondary)', fontSize: '0.95rem', marginBottom: '6px', fontWeight: '600' }}>Contact Us</h3>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                    <Link to="/contact" style={{
+                                        color: 'var(--color-text)',
+                                        textDecoration: 'none',
+                                        fontWeight: '500',
+                                        fontSize: '0.85rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '6px',
+                                        transition: 'color 0.2s'
+                                    }}>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-primary)' }}><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-                                        <a href="mailto:SDSC@ncm.gov.sa" style={{ color: 'var(--color-text)', textDecoration: 'none', fontWeight: '500', fontSize: '0.85rem' }}>SDSC@ncm.gov.sa</a>
-                                    </div>
+                                        Get in Touch
+                                    </Link>
                                 </div>
                             </div>
 

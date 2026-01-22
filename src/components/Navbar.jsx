@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo_conference.png';
+import logo from '../assets/logo_combined.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,13 +10,30 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
+        { name: 'Thematic Streams', path: '/#scope' },
         { name: 'Registration', path: '/registration' },
         { name: 'Agenda', path: '/agenda' },
         { name: 'Speakers', path: '/speakers' },
     ];
 
+    const handleScroll = (e, path) => {
+        if (path === '/#scope') {
+            e.preventDefault();
+            if (location.pathname === '/') {
+                const element = document.getElementById('scope');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                window.location.href = '/web/#scope';
+            }
+            setIsOpen(false);
+        }
+    };
+
     const isActive = (path) => {
         if (path === '/' && location.pathname !== '/') return false;
+        if (path === '/#scope') return false;
         return location.pathname.startsWith(path);
     };
 
@@ -33,6 +50,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
+                            onClick={(e) => handleScroll(e, link.path)}
                             className={`navbar-link ${isActive(link.path) ? 'active' : ''}`}
                         >
                             {link.name}
@@ -60,7 +78,10 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => {
+                                handleScroll(e, link.path);
+                                setIsOpen(false);
+                            }}
                             className={`navbar-mobile-link ${isActive(link.path) ? 'active' : ''}`}
                         >
                             {link.name}
@@ -69,6 +90,7 @@ const Navbar = () => {
                 </div>
             )}
         </nav>
+
     );
 };
 

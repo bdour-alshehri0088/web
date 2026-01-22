@@ -3,7 +3,7 @@ import './Countdown.css';
 
 const Countdown = () => {
     const calculateTimeLeft = () => {
-        const difference = +new Date('2026-11-02') - +new Date();
+        const difference = +new Date('2026-11-03T08:00:00') - +new Date();
         let timeLeft = {};
 
         if (difference > 0) {
