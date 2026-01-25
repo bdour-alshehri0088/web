@@ -15,9 +15,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="registration" element={<Registration />} />
           <Route path="contact" element={<Contact />} />
-          {/* Temporarily showing ToBeAnnounced for Agenda and Speakers */}
-          <Route path="agenda" element={<ToBeAnnounced title="Conference Agenda" />} />
-          <Route path="speakers" element={<ToBeAnnounced title="Keynote Speakers" />} />
+          {/* Temporarily showing ToBeAnnounced for Program and Committees */}
+          <Route path="program" element={<ToBeAnnounced title="Conference Program" />} />
+          <Route path="committees" element={<ToBeAnnounced title="Committees" />} />
         </Route>
       </Routes>
     </Router>

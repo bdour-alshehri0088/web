@@ -12,8 +12,8 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Thematic Streams', path: '/#scope' },
         { name: 'Registration', path: '/registration' },
-        { name: 'Agenda', path: '/agenda' },
-        { name: 'Speakers', path: '/speakers' },
+        { name: 'Conference Program', path: '/program' },
+        { name: 'Committees', path: '/committees' },
     ];
 
     const handleScroll = (e, path) => {
