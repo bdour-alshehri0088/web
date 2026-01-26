@@ -5,16 +5,20 @@ const PosterGuidelines = () => {
     return (
         <section className="section" style={{ backgroundColor: 'var(--color-surface)' }}>
             <div className="container">
+                <div className="text-center" style={{ marginBottom: '1.5rem' }}>
+                    <h2 style={{ fontSize: '2rem', color: 'var(--color-text)' }}>Poster Presentation Guidelines</h2>
+                </div>
+
                 {/* Abstract Submission Guidelines */}
                 <div style={{
                     backgroundColor: 'white',
-                    padding: '3rem',
+                    padding: '2.5rem 3rem',
                     borderRadius: 'var(--border-radius)',
                     boxShadow: 'var(--shadow-md)',
                     borderLeft: '6px solid var(--color-primary)',
-                    marginBottom: '2rem'
+                    marginBottom: '1.5rem'
                 }}>
-                    <h2 style={{ fontSize: '2rem', color: 'var(--color-text)', marginBottom: '1.5rem' }}>Abstract Submission Guidelines</h2>
+                    <h3 style={{ fontSize: '1.5rem', color: 'var(--color-text)', marginBottom: '1rem' }}>Abstract Submission Guidelines</h3>
                     <p style={{ color: 'var(--color-text-light)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                         Please prepare your abstract according to the following guidelines:
                     </p>

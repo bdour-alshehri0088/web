@@ -111,11 +111,13 @@ const ThemeGrid = () => {
     return (
         <section className="section" id="scope" style={{ backgroundColor: 'var(--color-surface)' }}>
             <div className="container">
-                <div className="text-center" style={{ marginBottom: '3rem' }}>
-                    <h2 style={{ fontSize: '2.5rem', color: 'var(--color-text)' }}>Thematic Streams</h2>
-                    <p style={{ color: 'var(--color-text-light)', marginTop: '1rem', maxWidth: '750px', margin: '1rem auto', fontSize: '1rem', lineHeight: '1.6' }}>
-                        Abstracts should address one of the following <strong>seven thematic streams</strong>:
-                    </p>
+                <div style={{ marginBottom: '2rem' }}>
+                    <div className="text-center" style={{ marginBottom: '1.5rem' }}>
+                        <h2 style={{ fontSize: '2.5rem', color: 'var(--color-text)' }}>Thematic Streams</h2>
+                        <p style={{ color: 'var(--color-text-light)', marginTop: '1rem', maxWidth: '750px', margin: '1rem auto', fontSize: '1rem', lineHeight: '1.6' }}>
+                            Abstracts should address one of the following <strong>seven thematic streams</strong>:
+                        </p>
+                    </div>
                 </div>
 
                 {/* Stream Navigation Pills */}
@@ -234,7 +236,8 @@ const ThemeGrid = () => {
                             overflow: 'hidden',
                             boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
                             border: '1px solid rgba(0,0,0,0.04)',
-                            margin: '0 30px'
+                            margin: '0 auto',
+                            maxWidth: '1200px'
                         }}
                     >
                         {/* Header with gradient and image */}
@@ -307,13 +310,15 @@ const ThemeGrid = () => {
                             </div>
                         </div>
 
-                        {/* Topics Grid */}
-                        <div style={{
-                            padding: '2rem',
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: '1.5rem'
-                        }}>
+                        <div
+                            className="stream-topics-grid"
+                            style={{
+                                padding: '2.5rem',
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(3, 1fr)',
+                                gap: '2rem'
+                            }}
+                        >
                             {currentStream.topics.map((topic, tIdx) => (
                                 <div
                                     key={tIdx}

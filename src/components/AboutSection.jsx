@@ -7,8 +7,8 @@ const AboutSection = () => {
             <div className="container">
 
                 {/* Conference Overview */}
-                <div style={{ marginBottom: '4rem' }}>
-                    <div className="text-center" style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '2.5rem' }}>
+                    <div className="text-center" style={{ marginBottom: '1.5rem' }}>
                         <h2 style={{ fontSize: '2rem', color: 'var(--color-text)' }}>Conference Overview</h2>
                     </div>
                     <div style={{
@@ -60,8 +60,8 @@ const AboutSection = () => {
                 </div>
 
                 {/* Why Attend? */}
-                <div style={{ marginBottom: '2rem' }}>
-                    <h2 className="text-center" style={{ fontSize: '2rem', color: 'var(--color-text)', marginBottom: '2.5rem' }}>Why Attend?</h2>
+                <div style={{ marginBottom: '1rem' }}>
+                    <h2 className="text-center" style={{ fontSize: '2rem', color: 'var(--color-text)', marginBottom: '1.5rem' }}>Why Attend?</h2>
                     <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
                         {[
                             {
