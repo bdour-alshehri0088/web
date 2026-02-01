@@ -14,7 +14,6 @@ const Navbar = () => {
         { name: 'Registration', path: '/registration' },
         { name: 'Conference Program', path: '/program' },
         { name: 'Committees', path: '/committees' },
-        { name: 'Contact', path: '/contact' },
     ];
 
     const handleScroll = (e, path) => {
