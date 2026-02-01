@@ -14,8 +14,8 @@ const Contact = () => {
         {
             category: 'Conference Secretariat',
             description: 'For general enquiries about registration, logistics, and visas, please contact:',
-            name: 'Mr. Belegith Al-Moaidi',
-            email: 'B.Al-Moaidi@ncm.gov.sa',
+            name: 'Mr. Turki Al-Harbi',
+            email: 'T.alharbi@ncm.gov.sa',
             icon: <Building size={22} />,
             gradient: 'linear-gradient(135deg, #C5A065 0%, #D4B87A 100%)'
         }
